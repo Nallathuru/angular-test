@@ -1,0 +1,37 @@
+<p>loki works!</p>
+<h1>Hello world</h1>
+
+<div> Hi, Welcome! user id  {{userid}} with {{username}} is {{userstatus}}</div>
+<br>
+<div> Hi, Welcome! user id  {{userid}} with {{username}} is {{getuserstatus()}}</div>
+<br>
+<div> {{usercreatedstatus}} </div>
+<button class="btn btn-primary" [disabled]="!allownewuser" (click)="changeusercreatedstatus()">Add user</button> 
+
+<!-- Sending event -->
+<!-- 
+    send data event using binding
+
+
+ -->
+
+ <div>
+
+<label>username</label>
+<input type="text" (input)="onupdateuser($event)"/> 
+
+ </div>
+
+ <div *ngIf="isusercreated"> user is created and the username is {{username}}</div>
+
+ <!-- Ng for -->
+
+ <div class="container">
+    <div class="card" *ngFor="let user of userList">
+        <div class="card-header"> {{user.firstname}}</div>
+        <div class="card-body">{{user.lastname}}</div>
+        <div class="card-footer">{{user.gender}}</div>
+    </div>
+ </div>
+  
+
